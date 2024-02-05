@@ -1,0 +1,148 @@
+#header {
+    background-color: blue;
+    color: orange;
+    padding: 10px;
+  }
+  
+  #head-link {
+    margin: 0px;
+  }
+  
+  #myBtn {
+  padding-left: none;
+  float: unset;
+  }
+  
+  button :hover {
+    cursor: pointer;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow:  auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 10%; /* Could be more or less, depending on screen size */
+    float: center;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  #main .a{
+    text-indent: 15px;
+  }
+  
+  #header a{
+    text-decoration: none;
+    color: orange;
+  }
+  
+  #content {
+    background-color: orange;
+  }
+  
+     /* #808080 is gray */
+  
+  body{
+    background-color: #808080;
+    font-family: 'Ubuntu', sans-serif , Helvetica, Arial, sans-serif;
+    color: blue;
+    font-size: 20px;
+  }
+  
+  .hr {
+    width: 110px;
+    background: blue;
+    height: 4px;
+    border: none;
+    display: inline-block;
+    float: center;
+    clear: both;
+  }
+  
+  #container{
+    background-color: white;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: blue;
+  }
+  
+  
+  #content {
+    padding: 10px;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  #nav {
+    width: 180px;
+    height: 190px;
+    float: left;
+  }
+  
+  
+  #nav .selected {
+      font-weight: bold;
+  }
+  
+  #nav ul{
+    List-style-type:none;
+    padding: 0px;
+  }
+  
+  
+  #nav a {
+    Text-decoration: none;
+    Color: blue;
+  }
+  
+  
+  #nav a:hover {
+    background: blue;
+    color: orange;
+  }
+  
+  
+  #main {
+    width:600px;
+    float: right;
+  }
+  
+  #footer {
+    clear: both;
+    padding: 10px;
+    text-align: left;
+    background-color: blue;
+    color: orange;
+  }

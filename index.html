@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="1Index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <title> Declan's Webpage </title>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <div id = "head-link">
+          <center>
+          <a href="index.html"><h1>Declan's Webpage</h1></a> 
+          </center>
+        </div>
+        <left>
+        <button id="myBtn">Login</button>
+        </left>
+          <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+              <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action= "" method="post" name="form">
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" value="" placeholder="John" required><br>
+            <label for = "password"> Password: </label></br>
+            <input type = "password" name = "password" value = "" placeholder = "******""required><br>
+            <br>
+            <input type="submit" name="Submit" value="Submit">
+            </form>
+          </div>
+          <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+          </script>
+
+        </div>
+      </div>
+    <div id="content">
+      <div id="nav">
+     
+
+        <h3>Navigation</h3>
+        <ul>
+          <li><a class = "selected" href = ""> Home</a></li>
+          <li>  <hr class = "hr"> <li>
+          <li><a href = "2About.html">About</a></li>
+          <li>  <hr class = "hr"> <li>
+          <li><a href = "3Contact.php">Contact</a></li>
+          <li>  <hr class = "hr"> <li>
+          <li><a href =" https://declanpoe.weebly.com/" target="_blank">Engineering Webpage</a></li>
+          <li>  <hr class = "hr"> <li>
+          <li><a href = "5Python.html"> Python Projects </a></li>
+          <li>  <hr class = "hr"> <li>
+          <li><a href = "6ComputerAnimation.html" > Computer Animation </a></li>
+          <li>  <hr class = "hr"> </li>
+          <li><a href = "https://hero-journey-website--declanmclaughl1.repl.co/" target="_blank"> Hero Journey Project </a></li>
+          <li>  <hr class = "hr"> <li>
+        </ul>
+      </div>
+      <div id="c"></div>
+      <div id="main">
+        <h2>Home Page</h2>
+        <div class = "a" >
+        
+        <p>Hello friends and family and welcome to Declan McLaughlin's website. I have created this website from scratch. During the building of this site, I have begun to develop a  basic knowledge of four coding/programming languages. In the navigation tab, I have also linked my Engineering Webpage that I have created using Weebly.com for my Principles of Engineering class in school. </p>
+        <p>Just for fun I have hidden a secret Easter Egg inside of my website. If you find it you will be redirected to a secret page. Good luck finding it!</p>
+        </div>
+
+        <p> I am learning: </p>
+        <ul>
+          <li><b>HTML</b> - The structure/architecture of web development</li>
+          <li><b>CSS</b> - The design and formatting of HTML</li>
+          <li><b>Python</b> - An automation and algorithm based language</li>
+          <li><b>PHP</b> - A server-side client to allow me to record user input</li>
+        </ul>
+      <div class = "a">
+        <p> I hope to increase my knowledge and capability to create using these languages and will use this website to show what I know. </p>
+      </div>
+      </div>
+      <div id="footer">
+        Copyright &copy; 2024 Budget Bros
+      </div>
+    </div>
+  </div>
+</body>
+</html>
