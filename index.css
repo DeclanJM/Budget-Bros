@@ -1,6 +1,6 @@
 #header {
-    background-color: blue;
-    color: orange;
+    background-color: darkgreen;
+    color: black;
     padding: 10px;
   }
   
@@ -11,6 +11,8 @@
   #myBtn {
   padding-left: none;
   float: unset;
+  background-color: whitesmoke;
+  color: darkgreen;
   }
   
   button :hover {
@@ -62,11 +64,11 @@
   
   #header a{
     text-decoration: none;
-    color: orange;
+    color: whitesmoke;
   }
   
   #content {
-    background-color: orange;
+    background-color: darkgreen;
   }
   
      /* #808080 is gray */
@@ -74,26 +76,26 @@
   body{
     background-color: #808080;
     font-family: 'Ubuntu', sans-serif , Helvetica, Arial, sans-serif;
-    color: blue;
+    color: whitesmoke;
     font-size: 20px;
   }
   
   .hr {
     width: 110px;
-    background: blue;
+    background: whitesmoke;
     height: 4px;
     border: none;
     display: inline-block;
-    float: center;
+    position: center;
     clear: both;
   }
   
   #container{
-    background-color: white;
+    background-color: darkgrey;
     width: 900px;
     margin-left: auto;
     margin-right: auto;
-    color: blue;
+    color: whitesmoke;
   }
   
   
@@ -124,13 +126,13 @@
   
   #nav a {
     Text-decoration: none;
-    Color: blue;
+    color: whitesmoke;
   }
   
   
   #nav a:hover {
-    background: blue;
-    color: orange;
+    background: whitesmoke;
+    color: darkgreen;
   }
   
   
@@ -143,6 +145,6 @@
     clear: both;
     padding: 10px;
     text-align: left;
-    background-color: blue;
-    color: orange;
+    background-color: whitesmoke;
+    color: darkgreen;
   }
