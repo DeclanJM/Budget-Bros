@@ -1,0 +1,3 @@
+Find username in this and see what line its on 
+Send that line number to passwords and see if their input is correct
+New user = make new file with their username as the filename 
