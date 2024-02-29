@@ -1,7 +1,5 @@
 package Model;
-
 import java.util.ArrayList;
-
 public class Calculations {
 private double total;
 
@@ -12,21 +10,29 @@ public Calculations(double total){
 public static void main(String[] args) {
       
 }
-/*
-* 
-* 
-*
-* Calc total cost 
-*/
-public double CalcTotal(ArrayList<Double> list){
+public ArrayList<Double> ReadInFile(ArrayList<String> categories) {
+    return null;
+    // returns array of totals for each category keeping  track of order of categories
+    /* call calc total for each category
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     */
 
-for (Double element : list){
+}
+public double CalcTotal(ArrayList<Double> categoryTotals){
+// calculate overall total for categories combined
+for (double element : categoryTotals){
     total += element;
 }
 return total;
 }
 public double CalcPercentage(ArrayList<Double> list){
-
     return 0;
 }
+
+//
 }
