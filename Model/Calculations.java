@@ -47,10 +47,4 @@ public class Calculations {
     public double CalcPercentage(ArrayList<Double> list){
         return 0;
     }
-
-
-    public static void main(String[] args) {
-        //Test different Calculations(double total) methods, eventually will move this to the Test class
-
-    }
 }
