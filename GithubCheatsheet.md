@@ -33,18 +33,18 @@ Once you have finished working on the branch and are ready to send it back to Gi
 
         git add . (adds everything that was modified)
              OR
-        git add file/path
+        git add specific/file/path
 
         git commit -m "commit message"
 
         git push origin <branch-name>
 
-Now we have sent our new branch to Github. From here we will go to our repository and create a Pull Request (PR). Github should give you a pop up saying _"Compare and Create Pull Request"_ or you can just go to the _Pull requests_ tab. 
+Now we have sent our new branch to Github. From here we will go to our repository and create a Pull Request (PR). Github should give you a pop up saying _"Compare & pull request"_ or you can just go to the _Pull requests_ tab. 
 
 Click on _New pull request._ \
 Change the _Compare_ box to the branch you want to merge into main. \
 Click _Create pull request_. \
-Now the title of the PR should be whatever your commit message was, feel free to change this or add a description but it is not necessary. \
+Now the title of the PR should be whatever your commit message was, feel free to change this or add a description but that is not necessary. \
 On the right-hand side of the screen, you will want to assign one of your teammates to fulfill the PR and merge your branch into main. \
 From there click _Create pull request_ and now you wait for your teammate to merge and delete your branch. 
 
