@@ -5,11 +5,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Calculations {
     private double total;
-    private HashMap<String,Double> categories = new HashMap<String,Double>();
+    public HashMap<String,Double> categories = new HashMap<String,Double>();
 
     public Calculations() {
         this.total = 0;
@@ -58,16 +59,22 @@ public class Calculations {
     }
 
 
-    public double CalcTotal(ArrayList<Double> categoryTotals){
+    public double CalcTotal(){
         // calculate overall total for categories combined
-        for (double element : categoryTotals){
-            total += element;
+        for (Map.Entry<String,Double> categories : categories.entrySet()){
+            total += categories.getValue();
         }
         return total;
     }
 
 
-    public double CalcPercentage(ArrayList<Double> list){
-        return 0;
+    public double CalcPercentage() {
+        double total = CalcTotal(); // Calculate total expense once
+        double calcpercent = 0.0;
+        for (Map.Entry<String, Double> category : categories.entrySet()) {
+            double categoryPercentage = category.getValue() / total * 100;
+            calcpercent += categoryPercentage;
+        }
+        return calcpercent;
     }
 }

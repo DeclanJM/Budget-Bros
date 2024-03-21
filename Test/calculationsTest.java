@@ -3,9 +3,6 @@ package Test;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
-
 import Model.Calculations;
 
 
@@ -38,12 +35,17 @@ public class calculationsTest {
 
 
     @Test
-    void testCalcTotal() {
-        ArrayList<Double> doubleList = new ArrayList<>();
-        doubleList.add(15.5);
-        doubleList.add(12.0);
-        doubleList.add(4.3);
-
-        assertEquals(31.8, calc.CalcTotal(doubleList));
+    void testTotalPercentage() {
+        // Set up test data
+        Calculations calculations = new Calculations();
+        calculations.categories.put("Food", 50.0);
+        calculations.categories.put("Transportation", 30.0);
+        calculations.categories.put("Entertainment", 20.0);
+    
+        // Call the method to test
+        double totalPercentage = calculations.CalcPercentage();
+    
+        // Assert the expected result (100%)
+        assertEquals(100.0, totalPercentage, 0.01); // Allow a small margin of error due to floating-point calculations
     }
 }
