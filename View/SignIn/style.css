@@ -13,9 +13,10 @@ a {
   position: fixed;
   height: 80px;
   width: 100%;
+  margin: auto;
   z-index: 100;
   padding: 0 20px;
-  background: #06380c
+  background: #06380c;
 }
 .nav {
   max-width: 1100px;
@@ -31,31 +32,36 @@ a {
 }
 .nav_logo,
 .nav_link{
-    padding: 30px 10px;
-    color: #fff;
+  text-decoration: none;
+  font: 18px;
+  margin: 0 1px; 
+  padding: 30px 10px;
+  font-weight: 500px; 
+  color: #fff;
+  font-family: helvetica;
 }
 .button {
   color: #fff;
 }
 .nav_logo {
-  font-size: 40px;
-  font: 'Poppins';
-
+  font-size: 38px;
+  font-family: sans-serif;
+  float: left;
 }
 .nav_item {
   column-gap: 70px;
-  
 }
 .nav_link:hover {
-  background: #fff;
-  color: black;
+  padding: 30px 10px; 
+  background-color: #fff;
+  color: black
   
 }
 .button {
-  padding: 6px 24px;
+  padding: 10px 25px;
   border: 2px solid #fff;
   background: transparent;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
 }
 .button:active {
@@ -71,6 +77,66 @@ a {
     font-family: 'Poppins';
     text-align: center;
     height: 109vh;
+}
+.white-box{
+  height: 45%;
+  width: 75%;
+  border-radius: 25px;
+  margin-left: 15%; 
+  margin-right: 15%;
+  margin-top: 14%; 
+  position: center;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+p{
+  font-size: 18px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+  font-family: helvetica; 
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  color : black; 
+  text-align: center;
+  margin-top: 3%;
+}
+h1{
+  text-align: center;
+  font-size: 45px;
+  font-style: italic, sans-serif;
+  padding-left: 20px; 
+  margin-top: 5%;
+  letter-spacing: 2px;
+  color: #06380c
+}
+h2{
+  font-size: 30px;
+  font-style: sans-serif;
+  padding-left: 20px;
+  color: #06380c;
+  font-weight: normal;
+}
+.cn{
+  width: 200px;
+  height: 50px;
+  background: rgb(213, 186, 96);
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease;
+}
+.cn a{
+  text-decoration: none;
+  color: black;
+  transition: .3s ease;
+}
+.cn:hover{
+  background-color: rgb(176, 148, 7);;
+}
+.cn:active{
+  transform: scale(0.98);
 }
 .home::before {
   content: "";
@@ -208,4 +274,10 @@ a {
   font-size: 15px;
   text-align: center;
   margin-top: 15px;
+}
+.testbox{
+  width: 40px;
+  height: 50px;
+  background-color: #0b0217;
+  
 }
