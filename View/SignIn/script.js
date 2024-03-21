@@ -4,7 +4,8 @@ const formOpenBtn = document.querySelector("#form-open"),
   formCloseBtn = document.querySelector(".form_close"),
   signupBtn = document.querySelector("#signup"),
   loginBtn = document.querySelector("#login"),
-  pwShowHide = document.querySelectorAll(".pw_hide");
+  pwShowHide = document.querySelectorAll(".pw_hide"), // Add a semicolon here
+  cnBtn = document.querySelector("#signup_form");  // Corrected to select the "cn" button
 
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
@@ -26,7 +27,14 @@ signupBtn.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.classList.add("active");
 });
+
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.classList.remove("active");
+});
+
+// Add an event listener for the "cn" button
+cnBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  formContainer.classList.add("active");
 });

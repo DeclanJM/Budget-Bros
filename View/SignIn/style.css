@@ -46,7 +46,7 @@ button { /* Should this do something when hover? */
   padding: 6px 24px;
   border: 2px solid #fff;
   background: transparent;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
 }
 button:active {
@@ -62,6 +62,66 @@ button:active {
     font-family: 'Poppins';
     text-align: center;
     height: 109vh;
+}
+.white-box{
+  height: 45%;
+  width: 75%;
+  border-radius: 25px;
+  margin-left: 15%; 
+  margin-right: 15%;
+  margin-top: 14%; 
+  position: center;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+p{
+  font-size: 18px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+  font-family: helvetica; 
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  color : black; 
+  text-align: center;
+  margin-top: 3%;
+}
+h1{
+  text-align: center;
+  font-size: 45px;
+  font-style: italic, sans-serif;
+  padding-left: 20px; 
+  margin-top: 5%;
+  letter-spacing: 2px;
+  color: #06380c
+}
+h2{
+  font-size: 30px;
+  font-style: sans-serif;
+  padding-left: 20px;
+  color: #06380c;
+  font-weight: normal;
+}
+.cn{
+  width: 200px;
+  height: 50px;
+  background: rgb(213, 186, 96);
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease;
+}
+.cn a{
+  text-decoration: none;
+  color: black;
+  transition: .3s ease;
+}
+.cn:hover{
+  background-color: rgb(176, 148, 7);;
+}
+.cn:active{
+  transform: scale(0.98);
 }
 .home::before {
   content: "";
@@ -200,4 +260,10 @@ button:active {
   font-size: 15px;
   text-align: center;
   margin-top: 15px;
+}
+.testbox{
+  width: 40px;
+  height: 50px;
+  background-color: #0b0217;
+  
 }
