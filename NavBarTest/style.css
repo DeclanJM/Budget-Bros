@@ -78,7 +78,7 @@ a:hover {
   display: none;
 }
 
-@media (max-width: 952px) {
+@media (max-width: 972px) {
   label.logo {
     font-size: 30px;
     padding-left: 50px;
@@ -88,7 +88,7 @@ a:hover {
   }
 }
 
-@media (max-width: 858px) {
+@media (max-width: 859px) {
   .checkbtn {
     display: block;
   }
@@ -152,8 +152,9 @@ section {
 /*login page*/ 
 
 .form-box {
+  align-items: center;
   width: 380px;
-  height: 430px;
+  height: 500px;
   position: relative;
   margin: 2% auto;
   background: rgba(255, 255, 255, 0.816);
@@ -164,27 +165,27 @@ section {
 }
 
 .button-box {
-  width: 220px;
-  margin: 35px auto;
-  position: relative;
-  box-shadow: 0 0 20px 9px #26272677;
   border-radius: 30px;
+  outline: none;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle-btn {
   padding: 10px 30px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
   outline: none;
-  position: relative;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(182, 153, 9);
+}
+.toggle-btn:hover {
+  background-color: rgb(150, 128, 5);
 }
 
 #btn {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 110px;
+  text-align: center;
   height: 100%;
   background: rgb(182, 153, 9);
   border-radius: 30px;
@@ -229,11 +230,12 @@ section {
   border-radius: 30px;
 }
 .submit-btn:hover{
-  background-color: rgb(150, 128, 5)
+  background-color: rgb(150, 128, 5);
 }
 
 .check-box {
   margin: 30px 10px 34px 0;
+  position: relative;
 }
 
 span {
@@ -264,11 +266,12 @@ span {
 /*Home Page CSS Code*/ 
 
 .white-box {
-  height: 45%;
+  height: fit-content;
+  padding-bottom: 25px;
   width: 65%;
   border-radius: 25px;
   margin: 14% auto; 
-  background-color: rgba(255, 255, 255, 0.816);;
+  background-color: rgba(255, 255, 255, 0.816);
   color: black;
   text-align: center;
   overflow: auto; 
@@ -292,7 +295,7 @@ h1 {
   padding: 0 20px; 
   margin-top: 5%;
   letter-spacing: 2px;
-  color: rgb(182, 153, 9);;
+  color: rgb(182, 153, 9);
 }
 
 h2 {
@@ -323,3 +326,24 @@ h2 {
 .cn:active{
   transform: scale(0.98);
 }
+
+/*Pop up message*/
+.message {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.816);
+  position: relative;
+  font-style: italic, sans-serif;
+  font-size: 20px;
+  color: rgb(182, 153, 9);
+  width: 380px;
+  margin: 2% auto;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+
+} 
+
+
+
+
+
