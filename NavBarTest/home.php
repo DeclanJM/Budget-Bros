@@ -6,26 +6,14 @@
   <title>Budget Bros Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <script src="newPage.js" nonce="8IBTHwOdqNKAWeKl7plt8g=="></script>
+  <?php 
+    include("nav.html");
+  ?>
 </head>
 
 <body>
-  <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-      <i class="fas fa-bars"></i>
-    </label>
-    <label class="logo">Budget Bros</label>
-    <ul>
-      <li><a class="active" href="home.php">Home</a></li>
-      <li><a href="../ExpensePage/index.html">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a class="button" href="login.php">Login</a></li>
-    </ul>
-  </nav>
-  </div>
   <section class="home">
     <div class="white-box">
       <h1>Welcome to Budget Bros Inc.</h1>
