@@ -42,8 +42,9 @@ li > a:hover {
   color: black;
 }
 button { /* Should this do something when hover? */
+  font-size: 18px;
   color: #fff;
-  padding: 6px 24px;
+  padding: 10px 30px;
   border: 2px solid #fff;
   background: transparent;
   border-radius: 10px;
