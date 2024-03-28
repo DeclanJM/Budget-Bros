@@ -12,7 +12,7 @@ function transmitName($first, $last) {
 
 // Adds new user's info to the newUser.csv file
 function addUserToFile($first, $last, $email, $password) {
-    $user_file = fopen("NewUser.csv", "w");
+    $user_file = fopen("../Data/newUser.csv", "w");
     $space = " ";
     $comma = ",";
     fwrite($user_file, $first);
@@ -29,11 +29,17 @@ function addUserToFile($first, $last, $email, $password) {
 // If the passwords do not match, the page will throw a pop-up alert and reload
 function validPassword($first_pass, $second_pass) {
     if ($first_pass != $second_pass) {
-        echo '<script>alert("Passwords must match!")</script>'; 
-        refresh();  // Reload page
+        passwordAlert();  // Calls popup
+        refresh();  // Reloads page
         return 0;
     }
     return 1;
+}
+
+
+// Alert for passwords not matching
+function passwordAlert() {
+    echo '<script>alert("Passwords must match!")</script>'; 
 }
 
 
@@ -55,6 +61,12 @@ function registerUser($first, $last, $email, $first_pass, $second_pass) {
 // Checks to see if the variable is empty or a null value
 function isEmpty($var) {
     return empty($var);
+}
+
+
+// Alert for empty values in form
+function emptyAlert() {
+    echo '<script>alert("No empty values allowed!")</script>'; 
 }
 
 
@@ -81,6 +93,7 @@ if(isset($_POST['Register'])) {
 
     // Checks to make sure there are no empty variable values. Required can be deleted from Inspect Element so this is another safety check
     if(isEmpty($first) || isEmpty($last) || isEmpty($email) || isEmpty($first_pass) || isEmpty($second_pass)) {
+        emptyAlert();
         refresh();
         return;
     }

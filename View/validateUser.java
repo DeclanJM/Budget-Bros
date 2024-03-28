@@ -28,8 +28,8 @@ public class validateUser {
     }
 
     public static void registerUser() {
-        ArrayList<User> newUserList = csvMachine("NewUser.csv", ",", false);
-        ArrayList<User> currentUserList = csvMachine("currentUserList.csv", ",", true);
+        ArrayList<User> newUserList = csvMachine("../Data/newUser.csv", ",", false);
+        ArrayList<User> currentUserList = csvMachine("../Data/currentUserList.csv", ",", true);
 
         User newGuy = newUserList.get(0);
 
@@ -38,7 +38,7 @@ public class validateUser {
         if(heIsValid) {
             //Add him to current users
             //currentUserList.add(newGuy);
-            CsvWriter.writeUserToCsv("currentUserList.csv", newGuy);
+            CsvWriter.writeUserToCsv("../Data/currentUserList.csv", newGuy);
         }
         else {
             //Do something else
