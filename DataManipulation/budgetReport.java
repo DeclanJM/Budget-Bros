@@ -1,4 +1,4 @@
-package Model;
+package DataManipulation;
 
 public class budgetReport {
     // read in users file 

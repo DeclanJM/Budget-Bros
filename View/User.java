@@ -58,7 +58,7 @@ public class User {
         User dec = new User("Declan M", "decjmclaughlin@gmail.com", "h3bwyutvwyiedw3q2rtwgs");
         CsvReader reader = new CsvReader("Users.csv", ",");
         try {
-            List<User> users = reader.readUsersFromCsv();
+            List<User> users = reader.readUsersFromCsv(true);
             System.out.println(users.get(0).getName());
         } catch (IOException e) {
             e.printStackTrace();
