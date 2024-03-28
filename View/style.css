@@ -96,7 +96,7 @@ a:hover {
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(CSUPIC.jpg);;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(CSUPIC.jpg);
     top: 80px;
     left: -100%;
     text-align: center;
