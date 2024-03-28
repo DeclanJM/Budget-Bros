@@ -14,10 +14,8 @@ function validPassword($first_pass, $second_pass) {
     }
     return 1;
 }
-
-function registerUser($first, $last, $email, $first_pass, $second_pass) {
-    if(validPassword($first_pass, $second_pass));
-    $user_file = fopen("NewUser.txt", "w");
+function addUserToFile($first, $last, $email, $password) {
+    $user_file = fopen("NewUser.csv", "w");
     $space = " ";
     $comma = ",";
     fwrite($user_file, $first);
@@ -26,8 +24,18 @@ function registerUser($first, $last, $email, $first_pass, $second_pass) {
     fwrite($user_file, $comma);
     fwrite($user_file, $email);
     fwrite($user_file, $comma);
-    fwrite($user_file, hash('sha256', $first_pass));
+    fwrite($user_file, hash('sha256', $password));
     fclose($user_file);
+}
+
+function validateUser() {
+    echo exec("java validateUser.java");
+}
+
+function registerUser($first, $last, $email, $first_pass, $second_pass) {
+    if(validPassword($first_pass, $second_pass));
+    addUserToFile($first, $last, $email, $first_pass);
+    validateUser();
 }
 
 function reroute() {
