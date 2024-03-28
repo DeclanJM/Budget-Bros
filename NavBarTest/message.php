@@ -1,3 +1,16 @@
+<?php
+    // Start session to access stored data
+    session_start();
+
+    // Check if name is set in session
+    if(isset($_SESSION['name'])) {
+        $name = $_SESSION['name'];
+    } else {
+        // If name is not set, handle accordingly
+        $name = "Guest"; // Default value
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -14,13 +27,7 @@
 
 <body>
     <div class="message">
-        <?php
-        if (isset($_POST["firstName"]) and isset($_POST["lastName"])) {
-            $firstName = $_POST["firstName"];
-            $lastName = $_POST["lastName"];
-            echo "<p>Thank you, $firstName $lastName for registering. You are ready to start saving!<p>";
-        }
-        ?>
+        <p>Thank you <?php echo $name; ?> for registering. You are ready to start saving!</p>
     </div>
 </body>
 
