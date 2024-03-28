@@ -1,5 +1,3 @@
-package NavBarTest;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,12 +13,11 @@ public class CsvReader {
         this.delimiter = delimiter;
     }
 
-    public ArrayList<User> readUsersFromCsv() throws FileNotFoundException, IOException{
+    public ArrayList<User> readUsersFromCsv(boolean firstLine) throws FileNotFoundException, IOException{
         ArrayList<User> userList = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            boolean firstLine = true;
 
             while ((line = br.readLine()) != null) {
                 // Skip the first line if it contains headers
