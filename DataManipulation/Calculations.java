@@ -1,4 +1,4 @@
-package Model;
+package DataManipulation;
 
 import java.io.File;
 import java.io.FileNotFoundException;

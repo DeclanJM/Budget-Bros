@@ -27,7 +27,7 @@ public class validateUser {
         return true;
     }
 
-    public static void main(String[] args) {
+    public static void registerUser() {
         ArrayList<User> newUserList = csvMachine("NewUser.csv", ",", false);
         ArrayList<User> currentUserList = csvMachine("currentUserList.csv", ",", true);
 
@@ -43,6 +43,9 @@ public class validateUser {
         else {
             //Do something else
         }
+    }
 
+    public static void main(String[] args) {
+        registerUser();
     }
 }
