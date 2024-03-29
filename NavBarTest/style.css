@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(CSUPIC.jpg);
+  background-position: center;
+}
+
+/*Header Section*/ 
+
+nav {
+  background: #06380c;
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+  column-gap: 4%;
+  align-items: center;
+  position: relative; 
+  z-index: 1000; 
+  justify-content: space-between;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav ul {
+  float: right;
+  margin-right: 30px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 20px;
+  padding: 24px 13px;
+  border-radius: 3px;
+  min-width: 100px;
+  text-align: center;
+  align-items: center;
+  font-family: georgia;
+}
+
+a:hover {
+  background: #06380c;
+  transition: .5s;
+  background-color: #fff;
+  color: black;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 972px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 859px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(CSUPIC.jpg);;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 999; /* Add this */
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 24px;
+    padding: 3% 200px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+  }
+  a:hover,
+  a.active {
+    color: #06380c;
+  }
+  #check:checked~ul {
+    left: 0;
+  }
+}
+
+section {
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+.button {
+  color: #fff;
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 10px;
+  font-family: georgia;
+  font-size: 20px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+/*login page*/ 
+
+.form-box {
+  align-items: center;
+  width: 380px;
+  height: 500px;
+  position: relative;
+  margin: 2% auto;
+  background: rgba(255, 255, 255, 0.816);
+  padding: 10px;
+  overflow: hidden;
+  margin-top: 8%;
+  border-radius: 10px;
+}
+
+.button-box {
+  border-radius: 30px;
+  outline: none;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(182, 153, 9);
+}
+.toggle-btn:hover {
+  background-color: rgb(150, 128, 5);
+}
+
+#btn {
+  text-align: center;
+  height: 100%;
+  background: rgb(182, 153, 9);
+  border-radius: 30px;
+  transition: .5s;
+}
+
+.input-group-login {
+  top: 150px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
+.input-group-register {
+  top: 120px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: rgb(182, 153, 9);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+.submit-btn:hover{
+  background-color: rgb(150, 128, 5);
+}
+
+.check-box {
+  margin: 30px 10px 34px 0;
+  position: relative;
+}
+
+span {
+  color: black;
+  font-size: 12px;
+  bottom: 68px;
+  position: absolute;
+}
+
+#login {
+  left: 50px;
+}
+
+#login input {
+  color: black;
+  font-size: 15;
+}
+
+#register {
+  left: 450px;
+}
+
+#register input {
+  color: black;
+  font-size: 15;
+}
+
+/*Home Page CSS Code*/ 
+
+.white-box {
+  height: fit-content;
+  padding-bottom: 25px;
+  width: 65%;
+  border-radius: 25px;
+  margin: 14% auto; 
+  background-color: rgba(255, 255, 255, 0.816);
+  color: black;
+  text-align: center;
+  overflow: auto; 
+  margin-top: 10%;
+}
+
+p {
+  font-size: 18px;
+  padding: 0 20px 25px; 
+  font-family: helvetica;
+  letter-spacing: 1.2px;
+  line-height: 30px;
+  color: black;
+  text-align: center;
+  margin-top: 3%;
+}
+
+h1 {
+  font-size: 45px;
+  font-style: italic, sans-serif;
+  padding: 0 20px; 
+  margin-top: 5%;
+  letter-spacing: 2px;
+  color: rgb(182, 153, 9);
+}
+
+h2 {
+  font-size: 30px;
+  font-style: sans-serif;
+  padding: 0 20px; 
+  color: #06380c;
+  font-weight: normal;
+}
+.cn{
+  width: 200px;
+  height: 50px;
+  background: rgb(182, 153, 9);
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s ease;
+}
+.cn a{
+  text-decoration: none;
+  color: black;
+  transition: .3s ease;
+}
+.cn:hover{
+  background-color: rgba(150, 128, 5)
+}
+.cn:active{
+  transform: scale(0.98);
+}
+
+/*Pop up message*/
+.message {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.816);
+  position: relative;
+  font-style: italic, sans-serif;
+  font-size: 20px;
+  color: rgb(182, 153, 9);
+  width: 380px;
+  margin: 2% auto;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+
+} 
+/*Expense Tracker*/
+
