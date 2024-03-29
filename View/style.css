@@ -152,11 +152,11 @@ section {
 /*login page*/ 
 
 .form-box {
-  align-items: center;
+  clear: both;
+  margin: 0 auto;
   width: 380px;
   height: 500px;
   position: relative;
-  margin: 2% auto;
   background: rgba(255, 255, 255, 0.816);
   padding: 10px;
   overflow: hidden;
