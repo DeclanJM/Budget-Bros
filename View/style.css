@@ -78,7 +78,7 @@ a:hover {
   display: none;
 }
 
-@media (max-width: 972px) {
+@media (max-width: 1037px) {
   label.logo {
     font-size: 30px;
     padding-left: 50px;
@@ -88,7 +88,7 @@ a:hover {
   }
 }
 
-@media (max-width: 859px) {
+@media (max-width: 893px) {
   .checkbtn {
     display: block;
   }
