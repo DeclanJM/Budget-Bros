@@ -8,8 +8,6 @@
 
 body {
   font-family: montserrat;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url(CSUPIC.jpg);
-  background-position: center;
 }
 
 /*Header Section*/ 
@@ -40,13 +38,14 @@ nav ul {
   margin-right: 30px;
 }
 
-nav ul li {
+nav ul li{
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
 }
 
-nav ul li a {
+nav li form input{
+  background-color: #06380c;
   color: white;
   font-size: 20px;
   padding: 24px 13px;
@@ -55,9 +54,11 @@ nav ul li a {
   text-align: center;
   align-items: center;
   font-family: georgia;
+  text-decoration: none;
+  border: none;
 }
 
-a:hover {
+nav li form input:hover {
   background: #06380c;
   transition: .5s;
   background-color: #fff;
@@ -122,12 +123,6 @@ a:hover {
   #check:checked~ul {
     left: 0;
   }
-}
-
-section {
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
 }
 
 .button {
