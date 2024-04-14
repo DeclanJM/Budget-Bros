@@ -51,6 +51,11 @@
     echo $_SESSION['name'];
     include ("$page.php");
     ?>
+    <script>
+        if($(".message") != null) {
+            $(".form-box").css("margin-top","0px");;
+        }
+    </script>
 </body>
 <!-- PHP FUNCTIONS -->
 <?php
