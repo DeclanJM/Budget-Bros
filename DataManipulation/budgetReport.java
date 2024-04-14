@@ -1,5 +1,3 @@
-package DataManipulation;
-
 public class budgetReport {
     // read in users file 
     // convert to Double
