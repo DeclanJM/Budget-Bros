@@ -48,7 +48,7 @@
             '</script>';
 
     }
-    echo $_SESSION['name'];
+    //echo $_SESSION['name'];
     include ("$page.php");
     ?>
     <script>
@@ -124,32 +124,23 @@ function registerUser($first, $last, $email, $first_pass, $second_pass)
 
 
 // Checks to see if the variable is empty or a null value
-function isEmpty($var)
-{
-    return empty($var);
-}
+function isEmpty($var) { return empty($var);}
 
 
 // Alert for empty values in form
-function emptyAlert()
-{
-    echo '<script>alert("No empty values allowed!")</script>';
-}
+function emptyAlert() { echo '<script>alert("No empty values allowed!")</script>';}
 
 
 // Reroutes the user to message.php
-function reroute()
-{
-    header("Location: message.php");
-    //echo '<script>window.location.replace("message.php")</script>';   // Same thing, header breaks stuff if the page has already been loaded in
-}
+// function reroute() { header("Location: message.php");
+//     //echo '<script>window.location.replace("message.php")</script>';   // Same thing, header breaks stuff if the page has already been loaded in
+// }
 
 
-// Refreshes the current page
-function refresh()
-{
-    echo '<script>window.location.replace("register.php")</script>';
-}
+// // Refreshes the current page
+// function refresh() {
+//     echo '<script>window.location.replace("register.php")</script>';
+// }
 
 
 // If the Register button has been pressed, submitting the form data...
