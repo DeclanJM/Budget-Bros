@@ -1,3 +1,5 @@
+package DataManipulation;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -56,7 +58,7 @@ public class User {
 
     public void testUser() {
         User dec = new User("Declan M", "decjmclaughlin@gmail.com", "h3bwyutvwyiedw3q2rtwgs");
-        CsvReader reader = new CsvReader("Users.csv", ",");
+        CsvReader reader = new CsvReader("newUser.csv", ",");
         try {
             List<User> users = reader.readUsersFromCsv(true);
             System.out.println(users.get(0).getName());
@@ -66,6 +68,5 @@ public class User {
     }
 public static void main(String[] args) {
     //testUser();
-
     }
 }
