@@ -20,7 +20,6 @@
             }
             elseif ($page == "budget report" || $page == "view expenses") {
                 $page = "budgetReport";
-                $name = strtr(trim($_SESSION['name']), [' ' => '']) . '.txt';
             }
             elseif ($page == "log in") {
                 $page = "login";
@@ -36,8 +35,17 @@
             elseif ($page == "sign up") {
                 $page = "message";
             }
+            elseif ($page == "enter expense") {
+                $page = "expensePage";
+            }
         } else {
             $page = "home";
+        }
+        if (isset($_POST["categories"]) && isset($_POST["description"]) && isset($_POST["amount"]) && isset($_SESSION["name"])) {
+            $fullName = explode(" ", $_SESSION["name"]);
+            $first = $fullName[0];
+            $last = $fullName[1];
+            writeBudgetEntry($first, $last, $_POST["description"],$_POST["categories"],$_POST["amount"],date("m/d/Y"));
         }
         include ("nav.php");
         if (isset($_POST["email"])) {
@@ -85,13 +93,26 @@
         fwrite($user_file, hash('sha256', $password));
         fclose($user_file);
     }
+    function createUserDataFile($first, $last) {
+        $usersData_file = fopen("../Data/".$first.$last.".csv", "w");
+        chmod("../Data/".$first.$last.".csv", 0755); // automatically chmods the file
+        fwrite($usersData_file, "Description, ");
+        fwrite($usersData_file, "Category, ");
+        fwrite($usersData_file, "Amount, ");
+        fwrite($usersData_file, "Date\n");
+        fclose($usersData_file);
+    }
+    function writeBudgetEntry($first, $last, $description, $category, $amount, $date) {
+        $fileContents = $description.", ".$category.", ".$amount.", ".$date."\n";
+        file_put_contents("../Data/".$first.$last.".csv", $fileContents, FILE_APPEND);
+    }
 
 
     // If the passwords do not match, the page will throw a pop-up alert and reload
     function validPassword($first_pass, $second_pass) {
         if ($first_pass != $second_pass) {
             passwordAlert();  // Calls popup
-            refresh();  // Reloads page
+            // refresh();  // Reloads page
             return 0;
         }
         return 1;
@@ -114,6 +135,7 @@
         if (validPassword($first_pass, $second_pass)) {
             addUserToFile($first, $last, $email, $first_pass);
             validateUser();
+            createUserDataFile($first, $last);
         }
     }
 

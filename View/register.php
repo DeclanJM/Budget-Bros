@@ -4,7 +4,7 @@
         <div class='button-box'>
             <div id='btn'></div>
             <form action="./index.php" method="POST">
-                <input type='submit' name="page" onclick='register()' class='toggle-btn' value="Log In"></input>
+                <input type='submit' name="page" class='toggle-btn' value="Log In"></input>
             </form>
         </div>
         <form action="./index.php" method="POST" id='login' class='input-group-login'>
