@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 
 <body style="background-image: url('CSUPIC.jpg');">
@@ -19,17 +18,22 @@
         if ($page == "budget entry") {
             $page = "expensePage";
         }
-        if (str_contains($page, "log in")) {
+        elseif ($page == "budget report" || $page == "view expenses") {
+            $page = "budgetReport";
+            $name = strtr(trim($_SESSION['name']), [' ' => '']) . '.txt';
+        }
+        elseif ($page == "log in") {
             $page = "login";
         }
-        if ($page == "logout") {
+        elseif ($page == "logout") {
             // remove all session variables
             session_unset();
 
             // destroy the session
             session_destroy();
+            $page = "home";
         }
-        if (str_contains($page, "sign")) {
+        elseif ($page == "sign up") {
             $page = "message";
         }
     } else {
@@ -39,16 +43,14 @@
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
     }
-    if (($page == "expensePage" || $page == "budgetEntry") && !isset($_SESSION["name"])) {
+    if (($page == "expensePage" || $page == "budgetReport") && !isset($_SESSION["name"])) {
         $page = "login";
-        $name = $_SESSION["name"];
         include ("message.php");
         echo '<script type="text/javascript">',
             'callNotLoggedIn();',
             '</script>';
 
     }
-    echo $_SESSION['name'];
     include ("$page.php");
     ?>
     <script>
@@ -56,6 +58,7 @@
             $(".form-box").css("margin-top","0px");;
         }
     </script>
+    <script src="createExpenseView.js"></script>
 </body>
 <!-- PHP FUNCTIONS -->
 <?php
@@ -92,7 +95,7 @@ function validPassword($first_pass, $second_pass)
 {
     if ($first_pass != $second_pass) {
         passwordAlert();  // Calls popup
-        refresh();  // Reloads page
+        // refresh();  // Reloads page
         return 0;
     }
     return 1;
@@ -138,18 +141,18 @@ function emptyAlert()
 
 
 // Reroutes the user to message.php
-function reroute()
-{
-    header("Location: message.php");
-    //echo '<script>window.location.replace("message.php")</script>';   // Same thing, header breaks stuff if the page has already been loaded in
-}
+// function reroute()
+// {
+//     //header("Location: message.php");
+//     echo '<script>window.location.replace("message.php")</script>';   // Same thing, header breaks stuff if the page has already been loaded in
+// }
 
 
-// Refreshes the current page
-function refresh()
-{
-    echo '<script>window.location.replace("register.php")</script>';
-}
+// // Refreshes the current page
+// function refresh()
+// {
+//     echo '<script>window.location.replace("register.php")</script>';
+// }
 
 
 // If the Register button has been pressed, submitting the form data...
@@ -165,7 +168,7 @@ if (isset($_POST['page'])) {
         // Checks to make sure there are no empty variable values. Required can be deleted from Inspect Element so this is another safety check
         if (isEmpty($first) || isEmpty($last) || isEmpty($email) || isEmpty($first_pass) || isEmpty($second_pass)) {
             emptyAlert();
-            refresh();
+            // refresh();
             return;
         }
 
