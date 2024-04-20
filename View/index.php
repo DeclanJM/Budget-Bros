@@ -13,45 +13,45 @@
 
 <body style="background-image: url('CSUPIC.jpg');">
     <?php
-    if (isset($_POST["page"])) {
-        $page = strtolower($_POST["page"]);
-        if ($page == "budget entry") {
-            $page = "expensePage";
-        }
-        elseif ($page == "budget report" || $page == "view expenses") {
-            $page = "budgetReport";
-            $name = strtr(trim($_SESSION['name']), [' ' => '']) . '.txt';
-        }
-        elseif ($page == "log in") {
-            $page = "login";
-        }
-        elseif ($page == "logout") {
-            // remove all session variables
-            session_unset();
+        if (isset($_POST["page"])) {
+            $page = strtolower($_POST["page"]);
+            if ($page == "budget entry") {
+                $page = "expensePage";
+            }
+            elseif ($page == "budget report" || $page == "view expenses") {
+                $page = "budgetReport";
+                $name = strtr(trim($_SESSION['name']), [' ' => '']) . '.txt';
+            }
+            elseif ($page == "log in") {
+                $page = "login";
+            }
+            elseif ($page == "logout") {
+                // remove all session variables
+                session_unset();
 
-            // destroy the session
-            session_destroy();
+                // destroy the session
+                session_destroy();
+                $page = "home";
+            }
+            elseif ($page == "sign up") {
+                $page = "message";
+            }
+        } else {
             $page = "home";
         }
-        elseif ($page == "sign up") {
-            $page = "message";
+        include ("nav.php");
+        if (isset($_POST["email"])) {
+            $email = $_POST["email"];
         }
-    } else {
-        $page = "home";
-    }
-    include ("nav.php");
-    if (isset($_POST["email"])) {
-        $email = $_POST["email"];
-    }
-    if (($page == "expensePage" || $page == "budgetReport") && !isset($_SESSION["name"])) {
-        $page = "login";
-        include ("message.php");
-        echo '<script type="text/javascript">',
-            'callNotLoggedIn();',
-            '</script>';
+        if (($page == "expensePage" || $page == "budgetReport") && !isset($_SESSION["name"])) {
+            $page = "login";
+            include ("message.php");
+            echo '<script type="text/javascript">',
+                'callNotLoggedIn();',
+                '</script>';
 
-    }
-    include ("$page.php");
+        }
+        include ("$page.php");
     ?>
     <script>
         if($(".message") != null) {
@@ -60,19 +60,19 @@
     </script>
     <script src="createExpenseView.js"></script>
 </body>
+
+
 <!-- PHP FUNCTIONS -->
 <?php
     // Creates a new session variable $name, that will be called from the message.php file
-    function transmitName($first, $last)
-    {
+    function transmitName($first, $last) {
         // Store name in session variable
         $_SESSION['name'] = $first . " " . $last;
     }
 
 
     // Adds new user's info to the newUser.csv file
-    function addUserToFile($first, $last, $email, $password)
-    {
+    function addUserToFile($first, $last, $email, $password) {
         $user_file = fopen("../Data/newUser.csv", "w");
         $space = " ";
         $comma = ",";
@@ -88,8 +88,7 @@
 
 
     // If the passwords do not match, the page will throw a pop-up alert and reload
-    function validPassword($first_pass, $second_pass)
-    {
+    function validPassword($first_pass, $second_pass) {
         if ($first_pass != $second_pass) {
             passwordAlert();  // Calls popup
             refresh();  // Reloads page
@@ -100,23 +99,18 @@
 
 
     // Alert for passwords not matching
-    function passwordAlert()
-    {
-        echo '<script>alert("Passwords must match!")</script>';
-    }
+    function passwordAlert() { echo '<script>alert("Passwords must match!")</script>';}
 
 
     // Executes a CLI command to run validateUser.java
-    function validateUser()
-    {
+    function validateUser() {
         chdir("../DataManipulation");
         echo exec("java DataManipulation.validateUser");
     }
 
 
     // If the passwords match, the user will be added to the newUser.csv file and will be validated from the java classes
-    function registerUser($first, $last, $email, $first_pass, $second_pass)
-    {
+    function registerUser($first, $last, $email, $first_pass, $second_pass) {
         if (validPassword($first_pass, $second_pass)) {
             addUserToFile($first, $last, $email, $first_pass);
             validateUser();
