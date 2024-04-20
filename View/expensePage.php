@@ -6,7 +6,7 @@
 
     <h3>Add Transaction</h3>
 
-    <form id="transactionForm" action="/View/expensePage.php" method="POST">
+    <form id="transactionForm" action="index.php" method="POST">
       <label for="categories">Choose an expense category:</label>
       <select name="categories" id="categories">
         <option value="food">Food</option>
@@ -27,7 +27,7 @@
         <input type="number" name="amount" value="0" min="0.01" step="0.01" required />
         <br><br>
       </div>
-      <input type="submit" name="register" class="toggle-btn" value="Enter Expense"></input>
+      <input type="submit" name="page" class="toggle-btn" value="Enter Expense"></input>
     </form>
   </section>
 </main>

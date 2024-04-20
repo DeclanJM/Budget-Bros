@@ -2,10 +2,13 @@ $(document).ready(function () {
 
 });
 function createTables(url) {
+  console.log("onClick has been activated");
+  try {
   $.ajax({
     url: url,
     dataType: "text",
     success: function (data) {
+      console.log(data);
       var transaction_data = data.split(/\r?\n|\r/);
       var page_data = `
       <!DOCTYPE html>
@@ -30,7 +33,7 @@ function createTables(url) {
           </div>
       `;
       var table_data = '<table class="table table-bordered table-striped">';
-      for (var i = 0; i < transaction_data.length; i++) {
+      for (var i = 0; i < transaction_data.length-1; i++) {
         var cell_data = transaction_data[i].split(",");
         table_data += '<tr>';
         for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
@@ -51,6 +54,10 @@ function createTables(url) {
       printWindow.document.close();
     }
   });
+}
+catch(err) {
+  console.log(err.message);
+}
 }
 
 // $(document).ready(function () {
