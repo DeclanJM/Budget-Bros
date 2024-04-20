@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 </head>
 
 <body style="background-image: url('CSUPIC.jpg');">
@@ -19,17 +18,22 @@
         if ($page == "budget entry") {
             $page = "expensePage";
         }
-        if (str_contains($page, "log in")) {
+        elseif ($page == "budget report" || $page == "view expenses") {
+            $page = "budgetReport";
+            $name = strtr(trim($_SESSION['name']), [' ' => '']) . '.txt';
+        }
+        elseif ($page == "log in") {
             $page = "login";
         }
-        if ($page == "logout") {
+        elseif ($page == "logout") {
             // remove all session variables
             session_unset();
 
             // destroy the session
             session_destroy();
+            $page = "home";
         }
-        if (str_contains($page, "sign")) {
+        elseif ($page == "sign up") {
             $page = "message";
         }
     } else {
@@ -39,16 +43,14 @@
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
     }
-    if (($page == "expensePage" || $page == "budgetEntry") && !isset($_SESSION["name"])) {
+    if (($page == "expensePage" || $page == "budgetReport") && !isset($_SESSION["name"])) {
         $page = "login";
-        $name = $_SESSION["name"];
         include ("message.php");
         echo '<script type="text/javascript">',
             'callNotLoggedIn();',
             '</script>';
 
     }
-    //echo $_SESSION['name'];
     include ("$page.php");
     ?>
     <script>
@@ -56,10 +58,10 @@
             $(".form-box").css("margin-top","0px");;
         }
     </script>
+    <script src="createExpenseView.js"></script>
 </body>
 <!-- PHP FUNCTIONS -->
 <?php
-
     // Creates a new session variable $name, that will be called from the message.php file
     function transmitName($first, $last)
     {
@@ -121,7 +123,6 @@
         }
     }
 
-
     // Checks to see if the variable is empty or a null value
     function isEmpty($var) { return empty($var);}
 
@@ -134,7 +135,6 @@
     // function reroute() { header("Location: message.php");
     //     //echo '<script>window.location.replace("message.php")</script>';   // Same thing, header breaks stuff if the page has already been loaded in
     // }
-
 
     // // Refreshes the current page
     // function refresh() {

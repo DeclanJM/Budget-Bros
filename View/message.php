@@ -19,8 +19,6 @@ if (isset($_POST['firstName']) and isset($_POST['lastName'])) {
         <?php echo $fName . " " . $lName; ?> for registering. You are ready to start saving!
     </p>
 </div>
-
-</html>
 <script>
     function callNotLoggedIn() {
         $("div").empty();

@@ -9,7 +9,14 @@
 body {
   font-family: montserrat;
 }
-
+/* table */
+table {
+  width: 100%;
+  border: solid black 2px;
+}
+th, td, tr {
+  border: solid lightgray 2px;
+}
 /*Header Section*/ 
 
 nav {
