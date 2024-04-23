@@ -9,13 +9,86 @@
 body {
   font-family: montserrat;
 }
-/* table */
+/* Expense Page */
 table {
   width: 100%;
   border: solid black 2px;
 }
-th, td, tr {
-  border: solid lightgray 2px;
+table, td, th {
+  border: solid black 2px;
+  border-collapse: collapse;
+}
+#expenseTable {
+  display: block;
+  width: 50%;
+  padding-left: 10px;
+  float: left;
+}
+#chart {
+  padding-right: 10px;
+  width: 50%;
+  float: right;
+  display: block;
+  align-items: center;
+}
+#chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pieChart {
+  border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+#legend {
+  margin-left: 20px;
+  background-color: white;
+  padding: 5px;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+}
+
+.entry-color {
+    height: 10px;
+    width: 10px;
+}
+
+.entry-text {
+  margin-left: 5px;
+}
+
+#color-red {
+  background-color: red;
+}
+
+#color-orange {
+  background-color: orange;
+}
+
+#color-yellow {
+  background-color: yellow;
+}
+
+#color-green {
+  background-color: green;
+}
+
+#color-blue {
+  background-color: blue;
+}
+
+#color-black {
+  background-color: black;
+}
+
+#color-brown {
+  background-color: brown;
 }
 /*Header Section*/ 
 
@@ -27,7 +100,7 @@ nav {
   column-gap: 4%;
   align-items: center;
   position: relative; 
-  z-index: 1000; 
+  z-index: 2; 
   justify-content: space-between;
 }
 
@@ -109,7 +182,7 @@ nav li form input:hover {
     left: -100%;
     text-align: center;
     transition: all .5s;
-    z-index: 999; /* Add this */
+    z-index: 1; /* Add this */
   }
   nav ul li {
     display: block;
@@ -268,7 +341,8 @@ span {
 /*Home Page CSS Code*/ 
 
 .white-box {
-  height: fit-content;
+  /* height: fit-content; */
+  min-height: 50%;
   padding-bottom: 25px;
   width: 65%;
   border-radius: 25px;

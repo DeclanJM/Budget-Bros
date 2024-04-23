@@ -9,8 +9,8 @@
 //     $name = "Guest"; // Default value
 // }
 if (isset($_POST['firstName']) and isset($_POST['lastName'])) {
-    $fName = $_POST['firstName'];
-    $lName = $_POST['lastName'];
+    $fName = ucfirst($_POST['firstName']);
+    $lName = ucfirst($_POST['lastName']);
 }
 ?>
 

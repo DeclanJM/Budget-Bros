@@ -9,12 +9,12 @@
     <form id="transactionForm" action="index.php" method="POST">
       <label for="categories">Choose an expense category:</label>
       <select name="categories" id="categories">
-        <option value="food">Food</option>
-        <option value="housing">Housing</option>
-        <option value="car">Car</option>
-        <option value="school">School</option>
-        <option value="phone">Phone</option>
-        <option value="fun">Fun</option>
+        <option value="Food">Food</option>
+        <option value="Housing">Housing</option>
+        <option value="Car">Car</option>
+        <option value="School">School</option>
+        <option value="Phone">Phone</option>
+        <option value="Fun">Fun</option>
       </select>
       <br><br>
       <div>

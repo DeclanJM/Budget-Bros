@@ -8,8 +8,8 @@
             </form>
         </div>
         <form action="./index.php" method="POST" id='login' class='input-group-login'>
-            <input required type='text' class='input-field' name="firstName" placeholder='First Name'>
-            <input required type='text' class='input-field' name="lastName" placeholder='Last Name '>
+            <input required type='text' class='input-field' name="firstName" placeholder='First Name' id="fname">
+            <input required type='text' class='input-field' name="lastName" placeholder='Last Name' id="lname">
             <input required type='email' class='input-field' name="email" placeholder='Email'>
             <input required type='password' class='input-field' name="first" placeholder='Enter Password'>
             <input required type='password' class='input-field' name="second" placeholder='Confirm Password'>

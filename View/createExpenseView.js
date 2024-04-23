@@ -1,16 +1,13 @@
 $(document).ready(function () {
-
 });
 function createTables(url) {
-  console.log("onClick has been activated");
   try {
-  $.ajax({
-    url: url,
-    dataType: "text",
-    success: function (data) {
-      console.log(data);
-      var transaction_data = data.split(/\r?\n|\r/);
-      var page_data = `
+    $.ajax({
+      url: url,
+      dataType: "text",
+      success: function (data) {
+        var transaction_data = data.split(/\r?\n|\r/);
+        var page_data = `
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -32,32 +29,35 @@ function createTables(url) {
               <h2>Transaction Entries:</h2>
           </div>
       `;
-      var table_data = '<table class="table table-bordered table-striped">';
-      for (var i = 0; i < transaction_data.length-1; i++) {
-        var cell_data = transaction_data[i].split(",");
-        table_data += '<tr>';
-        for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
-          if (i === 0) {
-            table_data += '<th>' + cell_data[cell_count] + '</th>';
+        var table_data = '<table class="table table-bordered table-striped">';
+        for (var i = 0; i < transaction_data.length - 1; i++) {
+          var cell_data = transaction_data[i].split(",");
+          if (i != 0) {
+            cell_data[2] = "$" + cell_data[2].trim();
           }
-          else {
-            table_data += '<td>' + cell_data[cell_count] + '</td>';
+          table_data += '<tr>';
+          for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+            if (i === 0) {
+              table_data += '<th>' + cell_data[cell_count] + '</th>';
+            }
+            else {
+              table_data += '<td>' + cell_data[cell_count] + '</td>';
+            }
           }
+          table_data += '</tr>';
         }
-        table_data += '</tr>';
+        table_data += '</table>';
+        page_data += table_data;
+        // $('#expenseTable').html(table_data);
+        let printWindow = window.open('', '_blank');
+        printWindow.document.write(page_data);
+        printWindow.document.close();
       }
-      table_data += '</table>';
-      page_data += table_data;
-      // $('#expenseTable').html(table_data);
-      let printWindow = window.open('', '_blank');
-      printWindow.document.write(page_data);
-      printWindow.document.close();
-    }
-  });
-}
-catch(err) {
-  console.log(err.message);
-}
+    });
+  }
+  catch (err) {
+    console.log(err.message);
+  }
 }
 
 // $(document).ready(function () {
