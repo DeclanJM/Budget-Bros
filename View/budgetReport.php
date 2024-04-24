@@ -93,7 +93,7 @@
                     categorySums[i] = newValue;
                 }
                 console.log(categorySums);
-                if (categorySums.length != 0) {
+                if (totalSum != 0) {
                     let styleAttribute = "background: conic-gradient(black " +
                         categorySums[0] +
                         "%, blue " +
@@ -116,9 +116,21 @@
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2] + categorySums[3] + categorySums[4]) +
                         "%);";
                     $("#pieChart").attr("style", styleAttribute);
-                    for (let i = 0; i < $(".entry-text").length; i++) {
-                        $(".entry-text")[i].append(" " + categorySums[i].toFixed(2) + "%")
+                    let categoriesWithoutZero = [];
+                    for (let i = 0; i < categorySums.length; i++) {
+                        if(categorySums[i] == 0) {
+                            $($(".entry")[i]).empty();
+                        }
+                        else {
+                            categoriesWithoutZero.push(categorySums[i]);
+                        }
                     }
+                    for (let i = 0; i < $(".entry-text").length; i++) {
+                        $($(".entry-text")[i]).append(" " + categoriesWithoutZero[i].toFixed(2) + "%");
+                    }
+                }
+                else {
+                    $(".white-box").append("<p style='color:red;clear:both;padding-top:10px;'>Please enter a transaction for this month to see chart data</p>");
                 }
             }
         });
@@ -130,11 +142,11 @@
         <input class="cn" id="expenses" type="submit" value="View Expenses" name="page"
             onclick="createTables('<?php echo '../Data/' . strtr($_SESSION['name'], [' ' => '']) . '.csv'; ?>')"></input>
     </form>
-    <div id="expenseTable">
+    <div id="expenseTable" style="border-right:solid black 2px;min-height: 269px;">
         <p>Transaction entries from the beginning of the month:</p>
         <!-- table -->
     </div>
-    <div id="chart">
+    <div id="floatRight">
         <p>Monthly Percent Expenses by Category:</p>
         <div id="chartContainer">
 
