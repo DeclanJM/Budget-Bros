@@ -33,6 +33,10 @@
         } elseif ($page == "enter expense") {
             $page = "expensePage";
         }
+        elseif($page == "logbackin") {
+            $page = "expensePage";
+            logInUser();
+        }
     } else {
         $page = "home";
     }
@@ -72,7 +76,16 @@
     <script src="createExpenseView.js"></script>
 </body>
 
-
+<!-- Log in user -->
+<?php
+function logInUser() {
+    // find user
+    // check email and password
+    // take first and last name
+    // call transmitName
+    // take user to the budget report
+}
+?>
 <!-- PHP FUNCTIONS -->
 <?php
 // Creates a new session variable $name, that will be called from the message.php file
