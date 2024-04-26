@@ -40,12 +40,13 @@
                         table_data += '</tr>';
                     }
                 }
-                table_data += '<td>Total:</td><td colspan="3">';
+                table_data += '<td>Total Expenses:</td><td colspan="3">';
                 table_data += "$" + sum;
                 table_data += '</td>'
-                table_data += '<tr><td>Over/Under Monthly Budget:</td><td colspan="3" id="underOver">$' + (<?php echo $_SESSION['budget']?> - sum) + '</td></tr>';
+                table_data += '<tr><td>Over/Under Budget:</td><td colspan="3" id="underOver">$' + (<?php echo $_SESSION['budget'] ?> - sum) + '</td></tr>';
                 table_data += '</table>';
                 $('#expenseTable').append(table_data).html();
+                $('#expenseTable').append('<form action="./index.php" method="POST"><label for="monthlyBudget" style="padding:20px">Change Monthly Budget:</label><input required type="number" class="input-field" name="monthlyBudget"value="<?php echo $_SESSION['budget'] ?>" min="100.00" step="100.00" id="monthlyBudget"style="width:25%;"></input><input type="submit" class="cn" name="page" value="Change Goal" id="changeMonthlyBudget" style="margin:20px;"></input><br><br></form>')
             }
         });
     }
@@ -138,6 +139,7 @@
     }
 </script>
 <div class="white-box">
+    <h1>Monthly Expenses:</h1>
     <p>Veiw all transaction entries in another window:</p>
     <form action="./index.php" method="POST">
         <input class="cn" id="expenses" type="submit" value="View Expenses" name="page"
@@ -145,14 +147,7 @@
     </form>
     <div id="expenseTable" style="border-right:solid black 2px;min-height: 269px;">
         <p>Transaction entries from the beginning of the month:</p>
-        <form action="./index.php" method="POST">
-            <label for="monthlyBudget" style="padding:20px">Change Monthly Budget:</label>
-            <input required type="number" class="input-field" name="monthlyBudget" value="<?php echo $_SESSION['budget']?>" min="100.00"
-                step="100.00" id="monthlyBudget" style="width:50%"></input>
-            <br><br>
-            <input type="submit" class="cn" name="page" value="Change Goal" id="changeMonthlyBudget"></input>
-            <br><br>
-        </form>
+
         <!-- table -->
     </div>
     <div id="floatRight">
