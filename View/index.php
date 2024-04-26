@@ -17,7 +17,10 @@
         $page = strtolower($_POST["page"]);
         if ($page == "budget entry") {
             $page = "expensePage";
-        } elseif ($page == "budget report" || $page == "view expenses") {
+        } elseif ($page == "budget report" || $page == "view expenses" || $page == "change goal") {
+            if ($page == "change goal") {
+                transmitBudget($_POST['monthlyBudget']);
+            }
             $page = "budgetReport";
         } elseif ($page == "log in") {
             $page = "login";
@@ -78,6 +81,9 @@
 
 <!-- Log in user -->
 <?php
+function transmitBudget($budget) {
+    $_SESSION['budget'] = $budget;
+}
 function logInUser() {
     // find user
     // check email and password
@@ -208,6 +214,8 @@ if (isset($_POST['page'])) {
         }
         // Call transmitName function to store name in a session variable
         transmitName($first, $last);
+
+        transmitBudget(100);
 
         registerUser($first, $last, $email, $first_pass, $second_pass);
 
