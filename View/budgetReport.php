@@ -12,7 +12,7 @@
             dataType: "text",
             success: function (data) {
                 var transaction_data = data.split(/\r?\n|\r/);
-                var table_data = '<table>';
+                var table_data = '<table id="table">';
                 const d = new Date();
                 const month = d.getMonth() + 1;
                 const year = d.getFullYear();
@@ -43,6 +43,7 @@
                 table_data += '<td>Total:</td><td colspan="3">';
                 table_data += "$" + sum;
                 table_data += '</td>'
+                table_data += '<tr><td>Over/Under Monthly Budget:</td><td colspan="3" id="underOver">$' + (<?php echo $_SESSION['budget']?> - sum) + '</td></tr>';
                 table_data += '</table>';
                 $('#expenseTable').append(table_data).html();
             }
@@ -118,7 +119,7 @@
                     $("#pieChart").attr("style", styleAttribute);
                     let categoriesWithoutZero = [];
                     for (let i = 0; i < categorySums.length; i++) {
-                        if(categorySums[i] == 0) {
+                        if (categorySums[i] == 0) {
                             $($(".entry")[i]).empty();
                         }
                         else {
@@ -144,6 +145,14 @@
     </form>
     <div id="expenseTable" style="border-right:solid black 2px;min-height: 269px;">
         <p>Transaction entries from the beginning of the month:</p>
+        <form action="./index.php" method="POST">
+            <label for="monthlyBudget" style="padding:20px">Change Monthly Budget:</label>
+            <input required type="number" class="input-field" name="monthlyBudget" value="<?php echo $_SESSION['budget']?>" min="100.00"
+                step="100.00" id="monthlyBudget" style="width:50%"></input>
+            <br><br>
+            <input type="submit" class="cn" name="page" value="Change Goal" id="changeMonthlyBudget"></input>
+            <br><br>
+        </form>
         <!-- table -->
     </div>
     <div id="floatRight">

@@ -231,6 +231,25 @@ nav li form input:hover {
   display: none;
 }
 
+.button {
+  color: #fff;
+  padding: 6px 24px;
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 10px;
+  font-family: georgia;
+  font-size: 30px;
+}
+
+.button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 1500px) {
   label.logo {
     font-size: 35px;
@@ -241,6 +260,9 @@ nav li form input:hover {
   }
   nav {
     height: 80px;
+  }
+  .button {
+    font-size: 25px;
   }
 }
 
@@ -254,6 +276,9 @@ nav li form input:hover {
   }
   nav {
     height: 75px;
+  }
+  .button {
+    font-size: 20px;
   }
 }
 
@@ -293,24 +318,7 @@ nav li form input:hover {
   }
 }
 
-.button {
-  color: #fff;
-  padding: 6px 24px;
-  border: 2px solid #fff;
-  background: transparent;
-  border-radius: 10px;
-  font-family: georgia;
-  font-size: 20px;
-}
 
-.button:hover {
-  background: #fff;
-  color: #000;
-}
-
-.button:active {
-  transform: scale(0.95);
-}
 
 /*login page*/ 
 
@@ -318,7 +326,7 @@ nav li form input:hover {
   clear: both;
   margin: 0 auto;
   width: 380px;
-  height: 500px;
+  height: 550px;
   position: relative;
   background: rgba(255, 255, 255, 0.816);
   padding: 10px;
