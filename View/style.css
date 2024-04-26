@@ -9,6 +9,78 @@
 body {
   font-family: montserrat;
 }
+/* about page */
+
+.eachPhoto{
+  display: block;
+  width: 25%;
+  height: fit-content;
+  float: left;
+}
+.photos {
+  width: 333px;
+  height: 485px;
+  border-radius: 50%;
+}
+.eachRow {
+  display: block;
+  padding: 20px;
+  min-height: 610px;
+  width: 100%;
+}
+@media only screen and (max-width: 2100px){
+  .photos {
+    width: 300px;
+    height: 394px;
+  }
+}
+
+@media only screen and (max-width: 1900px){
+  .photos {
+    width: 250px;
+    height: 328px;
+  }
+}
+@media only screen and (max-width: 1600px){
+  .photos {
+    width: 200px;
+    height: 263px;
+  }
+  .eachPhoto {
+    min-height: 400px;
+  }
+  .eachRow {
+    min-height: 410px;
+  }
+}
+@media only screen and (max-width: 1300px){
+  .photos {
+    width: 150px;
+    height: 197px;
+  }
+  .eachPhoto {
+    min-height: 390px;
+  }
+  .eachRow {
+    min-height: 400px;
+  }
+}
+@media only screen and (max-width: 990px){
+  .photos {
+    width: 100px;
+    height: 131px;
+  }
+  .eachPhoto {
+    min-height: 410px;
+  }
+  .eachRow {
+    min-height: 420px;
+  }
+}
+.eachPhoto p, h3 {
+  padding: 0;
+  margin: 0;
+}
 /* Expense Page */
 table {
   width: 100%;
@@ -94,7 +166,7 @@ table, td, th {
 
 nav {
   background: #06380c;
-  height: 80px;
+  height: 90px;
   width: 100%;
   margin: 0 auto;
   column-gap: 4%;
@@ -106,7 +178,7 @@ nav {
 
 label.logo {
   color: white;
-  font-size: 35px;
+  font-size: 40px;
   line-height: 80px;
   padding: 0 100px;
   font-weight: bold;
@@ -127,7 +199,7 @@ nav ul li{
 nav li form input{
   background-color: #06380c;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   padding: 24px 13px;
   border-radius: 3px;
   min-width: 100px;
@@ -159,17 +231,33 @@ nav li form input:hover {
   display: none;
 }
 
-@media (max-width: 1037px) {
+@media (max-width: 1500px) {
+  label.logo {
+    font-size: 35px;
+    padding-left: 50px;
+  }
+  nav li form input {
+    font-size: 25px;
+  }
+  nav {
+    height: 80px;
+  }
+}
+
+@media (max-width: 1300px) {
   label.logo {
     font-size: 30px;
     padding-left: 50px;
   }
-  nav ul li a {
-    font-size: 16px;
+  nav li form input {
+    font-size: 22px;
+  }
+  nav {
+    height: 75px;
   }
 }
 
-@media (max-width: 893px) {
+@media (max-width: 1130px) {
   .checkbtn {
     display: block;
   }
