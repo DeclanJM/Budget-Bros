@@ -101,6 +101,7 @@ table, td, th {
   width: 50%;
   padding: 0 10px;
   float: left;
+  
 }
 #floatRight {
   padding: 0 10px;
@@ -333,7 +334,10 @@ nav li form input:hover {
   margin: 0 auto;
   width: 380px;
   height: 550px;
-  position: relative;
+  position: absolute;        /* Changed from relative to absolute */
+  top: 50%;                  /* Position the top edge of the box at the center of the page vertically */
+  left: 50%;                 /* Position the left edge of the box at the center of the page horizontally */
+  transform: translate(-50%, -50%); /* Shift the box left and up by 50% of its own width and height to truly center it */
   background: rgba(255, 255, 255, 0.816);
   padding: 10px;
   overflow: hidden;

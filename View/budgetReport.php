@@ -155,7 +155,7 @@
         <div id="chartContainer">
 
             <div id="pieChart"
-                style="background: conic-gradient(black 16%, blue 16% 33%, green 33% 50%, yellow 50% 66%, orange 66% 83%, red 83%);">
+                style="background: conic-gradient(#b8c2cc 16%, #3490dc 16% 33%, #38c172 33% 50%, #ffed4a 50% 66%, #f6993f 66% 83%, #e3342f 83%);">
             </div>
 
             <div id="legend" style="font-size: 25px;">
