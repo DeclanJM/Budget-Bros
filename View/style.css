@@ -83,13 +83,16 @@ body {
 }
 /* Expense Page */
 table {
+  table-layout: fixed;
   width: 100%;
   border: solid black 2px;
 }
 table, td, th {
+  width: 100%;
   border: solid black 2px;
   border-collapse: collapse;
 }
+
 #expenseTable {
   display: block;
   width: 50%;
