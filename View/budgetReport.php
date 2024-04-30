@@ -1,4 +1,4 @@
-<script>
+<script nonce="8IBTHwOdqNKAWeKl7plt8g==">
     $(document).ready(function () {
         createMonthlyTable();
     });
@@ -27,6 +27,12 @@
                             sum += tempValue;
                             table_data += '<tr>';
                             for (var cell_count = 0; cell_count < cell_data.length; cell_count++) {
+                                let eachword = cell_data[cell_count].split(" ");
+                                    for (let eachwordindex = 0; eachwordindex < eachword.length; eachwordindex++) {
+                                        if (eachword[eachwordindex].length > 12) {
+                                            $(".white-box").css("width", "98%");
+                                        }
+                                    }
                                 table_data += '<td>' + cell_data[cell_count] + '</td>';
                             }
                             table_data += '</tr>';
@@ -186,6 +192,4 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </div>

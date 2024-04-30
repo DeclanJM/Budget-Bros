@@ -19,7 +19,7 @@
       <br><br>
       <div>
         <label for="name"></label>
-        <textarea name="description" rows="4" cols="50" placeholder="Describe your expense."></textarea>
+        <textarea name="description" rows="4" cols="50" placeholder="Describe your expense." maxlength="100"></textarea>
         <br><br>
       </div>
       <div>
