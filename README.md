@@ -19,3 +19,4 @@ Welcome to _Budget Bros_ - your go-to budget tracking app designed to help you m
 ## Screenshots
 ![Budget Bros Home](https://github.com/DeclanJM/Budget-Bros/assets/82425277/bb501c57-512e-42b1-beca-e6c9eb15be47)
 ![Budget Bros Expense](https://github.com/DeclanJM/Budget-Bros/assets/82425277/e400ea8c-eb0a-42b3-93c1-64bbcddc119d)
+![Budget Bros About](https://github.com/DeclanJM/Budget-Bros/assets/82425277/1a032523-e134-4c86-9d88-0f097654bb9d)
