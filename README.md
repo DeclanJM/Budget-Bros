@@ -16,5 +16,6 @@ Welcome to _Budget Bros_ - your go-to budget tracking app designed to help you m
 * Improve overall page design.
 * Refactor CSS to be more responsive and mobile-friendly
 
+## Screenshots
 ![Budget Bros Home](https://github.com/DeclanJM/Budget-Bros/assets/82425277/bb501c57-512e-42b1-beca-e6c9eb15be47)
 ![Budget Bros Expense](https://github.com/DeclanJM/Budget-Bros/assets/82425277/e400ea8c-eb0a-42b3-93c1-64bbcddc119d)
