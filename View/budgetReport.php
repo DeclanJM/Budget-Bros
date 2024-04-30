@@ -43,7 +43,7 @@
                 table_data += '<td>Total Expenses:</td><td colspan="3">';
                 table_data += "$" + sum;
                 table_data += '</td>'
-                table_data += '<tr><td>Over/Under Budget:</td><td colspan="3" id="underOver">$' + (<?php echo $_SESSION['budget'] ?> - sum) + '</td></tr>';
+                table_data += '<tr><td>Budget Remaining:</td><td colspan="3" id="underOver">$' + (<?php echo $_SESSION['budget'] ?> - sum) + '</td></tr>';
                 table_data += '</table>';
                 $('#expenseTable').append(table_data).html();
                 $('#expenseTable').append('<form action="./index.php" method="POST"><label for="monthlyBudget" style="padding:20px">Change Monthly Budget:</label><input required type="number" class="input-field" name="monthlyBudget"value="<?php echo $_SESSION['budget'] ?>" min="100.00" step="100.00" id="monthlyBudget"style="width:25%;"></input><input type="submit" class="cn" name="page" value="Change Goal" id="changeMonthlyBudget" style="margin:20px;"></input><br><br></form>')
@@ -96,25 +96,25 @@
                 }
                 console.log(categorySums);
                 if (totalSum != 0) {
-                    let styleAttribute = "background: conic-gradient(black " +
+                    let styleAttribute = "background: conic-gradient(#b8c2cc " +
                         categorySums[0] +
-                        "%, blue " +
+                        "%, #3490dc " +
                         categorySums[0] +
                         "% " +
                         parseFloat(categorySums[0] + categorySums[1]) +
-                        "%, green " +
+                        "%, #38c172 " +
                         parseFloat(categorySums[0] + categorySums[1]) +
                         "% " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2]) +
-                        "%, yellow " +
+                        "%, #ffed4a " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2]) +
                         "% " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2] + categorySums[3]) +
-                        "%, orange " +
+                        "%, #f6993f " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2] + categorySums[3]) +
                         "% " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2] + categorySums[3] + categorySums[4]) +
-                        "%, red " +
+                        "%, #e3342f " +
                         parseFloat(categorySums[0] + categorySums[1] + categorySums[2] + categorySums[3] + categorySums[4]) +
                         "%);";
                     $("#pieChart").attr("style", styleAttribute);
@@ -140,7 +140,7 @@
 </script>
 <div class="white-box">
     <h1>Monthly Expenses:</h1>
-    <p>Veiw all transaction entries in another window:</p>
+    <p>View all transaction entries in another window:</p>
     <form action="./index.php" method="POST">
         <input class="cn" id="expenses" type="submit" value="View Expenses" name="page"
             onclick="createTables('<?php echo '../Data/' . strtr($_SESSION['name'], [' ' => '']) . '.csv'; ?>')"></input>
